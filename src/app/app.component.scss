@@ -1,0 +1,56 @@
+.drawer-container {
+    height: 100dvh;
+}
+
+.drawer-sidenav {
+    width: 300px;
+}
+
+.sidenav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 55px;
+    height: 55px;
+    padding: 0 16px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.cp{
+    cursor: pointer;
+}
+
+nav {
+    padding: 16px 24px;
+    a {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+        &:hover {
+            background-color: #d1d1d181;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.toolbar-content {
+    mat-icon{
+        margin-right: 12px;
+    }
+}
+
+mat-toolbar, mat-toolbar-row {
+    min-height: 56px;
+    height: 56px;
+}
+
+.router-container {
+    padding: 16px 0 0 56px;
+}
