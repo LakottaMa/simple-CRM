@@ -1,0 +1,37 @@
+<section>
+    <h1>Add User</h1>
+    <div mat-dialog-content class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [(ngModel)]="user.firstName" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [(ngModel)]="user.lastName" matInput>
+        </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Birthday</mat-label>
+        <input [(ngModel)]="birthDate" matInput [matDatepicker]="picker1" placeholder="MM/DD/YYYY">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input [(ngModel)]="user.address" matInput placeholder="Street + Number">
+    </mat-form-field>
+    <div class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Zip Code</mat-label>
+            <input [(ngModel)]="user.zipCode" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input [(ngModel)]="user.city" matInput>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="btn-container">
+        <button mat-button [mat-dialog-close]="true">Cancel</button>
+        <button mat-button [mat-dialog-close]="true" (click)="saveUser()">Save</button>
+    </div>
+</section>
