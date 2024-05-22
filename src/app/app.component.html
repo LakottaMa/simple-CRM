@@ -1,12 +1,12 @@
 <mat-drawer-container class="drawer-container" autosize>
   <mat-drawer #drawer class="drawer-sidenav" [opened]="true" mode="side">
     <div class="sidenav-logo">
-      Platz für Logo
+      <img src="../assets/img/logo.png" alt="logo">
     </div>
-    <nav>
-      <a routerLink='/' routerLinkActive="active"><mat-icon>dashboard</mat-icon> Dashboard</a>
-      <a routerLink='/user' routerLinkActive="active"><mat-icon>person_outline</mat-icon> User</a>
-    </nav>
+    <ul>
+      <li routerLink='/dashboard' routerLinkActive="active-link"><mat-icon>dashboard</mat-icon> Dashboard</li>
+      <li routerLink='/user' routerLinkActive="active-link"><mat-icon>person_outline</mat-icon> User</li>
+    </ul>
   </mat-drawer>
 
   <div class="toolbar-content">

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,7 +10,7 @@ import { DashboardComponent } from './services/components/dashboard/dashboard.co
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MatToolbarModule, MatSidenavModule, MatIconModule, UserComponent, DashboardComponent],
+  imports: [RouterOutlet, RouterModule, CommonModule, MatToolbarModule, MatSidenavModule, MatIconModule, UserComponent, DashboardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

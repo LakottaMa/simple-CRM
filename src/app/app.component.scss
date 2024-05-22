@@ -10,19 +10,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 55px;
-    height: 55px;
-    padding: 0 16px;
-    border-bottom: 1px solid #ffffff;
+    min-height: 72px;
+    height: 72px;
+    padding: 12px 32px 0 32px;
+    img {
+        height: 100%;
+        width: auto;
+        filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+    }
 }
 
-.cp{
+.cp {
     cursor: pointer;
 }
 
-nav {
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
     padding: 16px 24px;
-    a {
+    margin: 0;
+    li {
         display: flex;
         align-items: center;
         gap: 16px;
@@ -34,19 +43,21 @@ nav {
         &:hover {
             background-color: #d1d1d181;
         }
-        &:focus {
-            outline: none;
-        }
     }
 }
 
+.active-link {
+    background-color: #d1d1d181;
+}
+
 .toolbar-content {
-    mat-icon{
+    mat-icon {
         margin-right: 12px;
     }
 }
 
-mat-toolbar, mat-toolbar-row {
+mat-toolbar,
+mat-toolbar-row {
     min-height: 56px;
     height: 56px;
 }
