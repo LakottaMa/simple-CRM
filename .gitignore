@@ -42,3 +42,8 @@ testem.log
 Thumbs.db
 .gitattributes
 .gitignore
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
