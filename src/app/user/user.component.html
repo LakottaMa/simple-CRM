@@ -3,6 +3,7 @@
         <table>
             <tr>
                 <th>Name</th>
+                <th>E-Mail</th>
                 <th>Birthday</th>
                 <th>Address</th>
                 <th>Zip Code</th>
@@ -10,6 +11,7 @@
             </tr>
             <tr *ngFor="let user of allUsers">
                 <td>{{user.firstName}} {{user.lastName}}</td>
+                <td>{{user.email}}</td>
                 <td>{{user.birthDate | date: 'dd.MM.yyyy'}}</td>
                 <td>{{user.address}}</td>
                 <td>{{user.zipCode}}</td>

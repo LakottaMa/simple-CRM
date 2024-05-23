@@ -1,0 +1,22 @@
+.add-user-button {
+    z-index: 1;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+mat-card-content {
+    padding: 0 24px !important;
+}
+
+table {
+    width: 100%;
+    th{
+        text-align: left;
+        padding: 12px 0;
+    }
+    td{
+        border-top: solid 1px gray;
+        padding: 12px 0;
+    }
+}
