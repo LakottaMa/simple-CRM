@@ -1,0 +1,21 @@
+<mat-card class="user-card-header">
+    <div class="user-details">
+        <div class="user-image">
+            <img src="../assets/img/user.png">
+        </div>
+        <div>
+            <h1>{{user.firstName}} {{user.lastName}}</h1>
+            <p>{{user.email}}</p>
+        </div>
+    </div>
+</mat-card>
+
+<mat-card class="user-card-address">
+    <button type="button" mat-icon-button matTooltip="edit address" (click)="openAddressDialog()"><mat-icon>more_vert</mat-icon></button>
+    <mat-card-title>Address</mat-card-title>
+    <mat-card-content>
+        {{user.address}} <br>
+        {{user.zipCode}} {{user.city}}
+    </mat-card-content>
+</mat-card>
+

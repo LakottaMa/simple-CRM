@@ -6,16 +6,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule, MatDialog, MatDialogContent } from '@angular/material/dialog';
 import { DialogAddUserComponent } from '../services/components/dialog-add-user/dialog-add-user.component';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
 import { User } from '../models/user.class';
 import { Firestore, collection, getDocs, query } from '@angular/fire/firestore';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule, MatDialogModule, MatDialogContent],
+  imports: [RouterOutlet, RouterModule, CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule, MatDialogModule, MatDialogContent, UserDetailComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
+
 export class UserComponent implements OnInit {
   user = new User();
   allUsers: User[] = [];
@@ -24,16 +27,19 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.loadUsers();
   }
+
   loadUsers(): void {
     const usersRef = collection(this.firestore, 'users');
-    getDocs(query(usersRef))
-      .then((querySnapshot) => {
-        this.allUsers = [];
-        querySnapshot.forEach((doc) => {
-          this.allUsers.push(doc.data() as User);
-        });
+    getDocs(query(usersRef)).then((querySnapshot) => {
+      this.allUsers = [];
+      querySnapshot.forEach((doc) => {
+        const userData = doc.data() as User;
+        userData.id = doc.id;
+        this.allUsers.push(userData);
       });
+    });
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogAddUserComponent);
     dialogRef.afterClosed().subscribe(result => {
