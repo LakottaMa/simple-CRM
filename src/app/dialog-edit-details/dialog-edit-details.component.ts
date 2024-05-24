@@ -8,6 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { User } from '../models/user.class';
 
 @Component({
   selector: 'app-dialog-edit-details',
@@ -17,6 +18,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrl: './dialog-edit-details.component.scss'
 })
 export class DialogEditDetailsComponent {
+  loading: boolean = false;
+  user = new User()
+  birthDate = new Date();
+
   constructor(public dialogRef: MatDialogRef<DialogEditDetailsComponent>) { }
 
 

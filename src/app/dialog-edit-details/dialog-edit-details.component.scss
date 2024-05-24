@@ -1,0 +1,40 @@
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: rgb(140, 140, 145);
+    h1{
+        color: white;
+        text-align: center;
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px;
+    gap: 16px;
+}
+
+mat-form-field {
+    padding-top: 8px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    button{
+    background-color: #5E5E5E;
+    }
+}
+
+mat-progress-bar {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    width: 100%;
+}

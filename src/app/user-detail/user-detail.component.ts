@@ -51,6 +51,8 @@ export class UserDetailComponent implements OnInit {
   editUserDialog() {
     // const dialogRef = this.dialog.open(DialogEditDetailsComponent, {restoreFocus: false});
     // dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());
-    this.dialog.open(DialogEditDetailsComponent);
+    this.dialog.open(DialogEditDetailsComponent, {
+      restoreFocus: false
+    })
   }
 }
