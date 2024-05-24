@@ -1,5 +1,5 @@
 <mat-card class="user-card-header">
-    <div class="user-details">
+    <div class="user-card-header-details">
         <div class="user-image">
             <img src="../assets/img/user.png">
         </div>
@@ -9,13 +9,29 @@
         </div>
     </div>
 </mat-card>
+<mat-card class="user-card-details">
+    <button class="menu-btn" mat-button [matMenuTriggerFor]="menu" #menuTrigger><mat-icon>more_vert</mat-icon></button>
+    <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="editUserDialog()">Edit</button>
+    </mat-menu>
 
-<mat-card class="user-card-address">
-    <button type="button" mat-icon-button matTooltip="edit address" (click)="openAddressDialog()"><mat-icon>more_vert</mat-icon></button>
-    <mat-card-title>Address</mat-card-title>
-    <mat-card-content>
-        {{user.address}} <br>
-        {{user.zipCode}} {{user.city}}
-    </mat-card-content>
+    <div>
+        <mat-card-title>Address</mat-card-title>
+        <mat-card-content>
+            {{user.address}} <br>
+            {{user.zipCode}} {{user.city}}
+        </mat-card-content>
+    </div>
+    <div>
+        <mat-card-title>Birthday</mat-card-title>
+        <mat-card-content>
+            {{user.birthDate | date: 'dd.MM.yyyy'}}
+        </mat-card-content>
+    </div>
+    <div>
+        <mat-card-title>Phone</mat-card-title>
+        <mat-card-content>
+            {{user.phone}}
+        </mat-card-content>
+    </div>
 </mat-card>
-

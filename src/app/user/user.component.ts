@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule, MatDialog, MatDialogContent } from '@angular/material/dialog';
 import { DialogAddUserComponent } from '../services/components/dialog-add-user/dialog-add-user.component';
-import { UserDetailComponent } from '../user-detail/user-detail.component';
 import { User } from '../models/user.class';
 import { Firestore, collection, getDocs, query } from '@angular/fire/firestore';
 import { RouterModule, RouterOutlet } from '@angular/router';
@@ -14,7 +13,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule, MatDialogModule, MatDialogContent, UserDetailComponent],
+  imports: [RouterOutlet, RouterModule, CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule, MatDialogModule, MatDialogContent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
